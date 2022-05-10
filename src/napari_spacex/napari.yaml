@@ -1,0 +1,48 @@
+name: napari-spaceX
+display_name: napari FooBar
+contributions:
+  commands:
+    - id: napari-spaceX.get_reader
+      python_name: napari_spacex._reader:napari_get_reader
+      title: Open data with napari FooBar
+    - id: napari-spaceX.write_multiple
+      python_name: napari_spacex._writer:write_multiple
+      title: Save multi-layer data with napari FooBar
+    - id: napari-spaceX.write_single_image
+      python_name: napari_spacex._writer:write_single_image
+      title: Save image data with napari FooBar
+    - id: napari-spaceX.make_sample_data
+      python_name: napari_spacex._sample_data:make_sample_data
+      title: Load sample data from napari FooBar 
+    - id: napari-spaceX.make_qwidget
+      python_name: napari_spacex._widget:ExampleQWidget
+      title: Make example QWidget
+    - id: napari-spaceX.make_magic_widget
+      python_name: napari_spacex._widget:example_magic_widget
+      title: Make example magic widget
+    - id: napari-spaceX.make_func_widget
+      python_name: napari_spacex._widget:example_function_widget
+      title: Make example function widget 
+  readers:
+    - command: napari-spaceX.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy'] 
+  writers:
+    - command: napari-spaceX.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: napari-spaceX.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy'] 
+  sample_data:
+    - command: napari-spaceX.make_sample_data
+      display_name: napari FooBar
+      key: unique_id.1 
+  widgets:
+    - command: napari-spaceX.make_qwidget
+      display_name: Example QWidget
+    - command: napari-spaceX.make_magic_widget
+      display_name: Example Magic Widget
+    - command: napari-spaceX.make_func_widget
+      autogenerate: true
+      display_name: Example Function Widget 
